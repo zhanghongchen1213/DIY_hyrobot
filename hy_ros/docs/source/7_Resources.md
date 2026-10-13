@@ -25,8 +25,12 @@ python3 hy_ros/tools/fetch_source.py --group asr
 ```
 
 - Sherpa wheel：沿用[官方 RKNPU 安装入口](https://k2-fsa.github.io/sherpa/onnx/rknn/install.html)，固定 `1.12.19 / cp310 / aarch64`。上游 wheel 的 SHA-256 与本地一致。
-- 流式中英双语 ASR 模型：沿用教程中的 [Sherpa 官方 Release 下载](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-rk3588-streaming-zipformer-small-bilingual-zh-en-2023-02-16.tar.bz2)，下载后按本地原件的 SHA-256 校验。
+- 流式中英双语 ASR 模型：沿用教程中的 [Sherpa 官方 Release 下载](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-rk3588-streaming-zipformer-small-bilingual-zh-en-2023-02-16.tar.bz2)，官方同名归档现为 49,676,089 字节，已实际下载并验证 GitHub 公布的 SHA-256。它与作者旧包不同，详见下方版本说明。
 - `librknnrt.so`：来自 [RKNN Toolkit2 v2.3.0](https://github.com/airockchip/rknn-toolkit2/tree/a8dd54d41e92c95b4f95780ed0534362b2c98b92)，已用 Git blob 哈希验证与本地文件逐字节一致。
+
+**ASR 归档版本说明：** 当前官方包的 SHA-256 为 `738aeb2ba4e3fe1e2d5d42a421c3e90e889e93c555a83f3a3d740fd0c6827d72`。本地旧包是 49,718,022 字节，SHA-256 为 `ff8d3c9b217d0a7834047ed93c4b7e2e5f785e29141d7bc425f49f653405fde3`。完整解压比对发现 9 个文件中 7 个相同，`encoder.rknn` 和 `joiner.rknn` 内容有差异；两版嵌入的转换器版本都为 2.1.0。不能把新版包称为作者旧包的逐字节备份，也未在机器人上验证新版识别效果。脚本为新下载校验当前官方包，同时接受并保留已有的作者旧包。
+
+[Sherpa 官方模型说明](https://k2-fsa.github.io/sherpa/onnx/rknn/models.html)提示部分 `librknnrt` 2.3.x/2.4.x 组合可能崩溃，而 2.2.0 是其已知可用版本。这里保留作者实际使用的 2.3.0 校验来源；若 ASR 崩溃，可按官方说明用进程独立的 `LD_LIBRARY_PATH` 测试 2.2.0，避免直接替换全局库影响 YOLO/RKLLM。运行库组合与语音识别仍需端侧测试。
 
 这些文件恢复到原教程的 `hy_ros/source/0.RK3588S/1.sherpa-onnx/`，然后在 RK3588 的 Python 3.10 环境按原安装步骤使用。脚本只下载，不在 Windows 上安装 ARM wheel。
 
@@ -46,7 +50,7 @@ python3 hy_ros/tools/fetch_source.py --group qwen
 ## 相机、数据集与采集照片
 
 - `2.Camera/master.zip`：其中 220 个文件与 [mjpg-streamer 固定提交](https://github.com/jacksonliam/mjpg-streamer/tree/310b29f4a94c46652b20c4b7b6e5cf24e532af39) 完全一致。开发教程已改为从该上游克隆后编译，无需原 ZIP。
-- YOLO 标注数据集：原教程已有 [Roboflow 数据集](https://universe.roboflow.com/butter-robot/butter_robot/dataset/3)。下载版本 3 的 YOLOv8 导出包，解压到 `butter_yolov8n_train/Dataset/`，使其包含 `train/`、`valid/`、`test/`。网站可能要求登录；本次未代用户登录或重新导出。现有本地导出注明 CC BY 4.0，保留其来源说明。数据集不重复上传。
+- YOLO 标注数据集：原教程已有 [Roboflow 数据集](https://universe.roboflow.com/butter-robot/butter_robot/dataset/3)。下载版本 3 的 YOLOv8 导出包，解压到 `butter_yolov8n_train/Dataset/`，使其包含 `train/`、`valid/`、`test/`。本次自动访问返回 HTTP 403，未能重新导出验证；请在浏览器登录后确认版本 3 可下载。该数据集入口来自原教程，不代表已验证其匿名下载可用。现有本地导出注明 CC BY 4.0，保留其来源说明。数据集不重复上传。
 - `source/butter_img/`：原始采集照片不是运行预训练模型所必需，训练可使用上述标注集，也可重新采集并标注。不要求下载作者全部照片。原文引用的 `tools/capture_tool.py` 不在原仓库，本次改为明确说明自行采集流程，不冒充原作者已有工具。
 - 训练笔记本已移除原电脑绝对路径。从 `butter_yolov8n_train` 目录启动 Jupyter，使用该目录的 `dataset.yaml`。
 

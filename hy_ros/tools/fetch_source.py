@@ -8,6 +8,13 @@ def digest(path):
         for b in iter(lambda:f.read(4*1024*1024),b''):h.update(b)
     return h.hexdigest()
 
+def matches(path, entry):
+    variants=[entry]+entry.get('previous_versions',[])
+    candidates=[v for v in variants if path.is_file() and path.stat().st_size==v['size']]
+    if not candidates:return False
+    actual=digest(path)
+    return any(actual==v['sha256'] for v in candidates)
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--group',nargs='+',choices=['project','asr','qwen','all'],default=['project'])
@@ -22,7 +29,7 @@ def main():
         target=dest/entry['path']
         if not target.resolve().is_relative_to(dest):raise ValueError('Resource path escapes destination')
         if target.exists():
-            if target.stat().st_size==entry['size'] and digest(target)==entry['sha256']:
+            if matches(target,entry):
                 print('Verified '+entry['path'],flush=True);continue
             raise RuntimeError('Existing local file differs; preserve or rename it before retrying: '+str(target))
         if args.verify_only:raise RuntimeError('Missing resource: '+str(target))
@@ -36,7 +43,7 @@ def main():
                 subprocess.run([curl,'--fail','--location','--retry','5','--connect-timeout','30','--continue-at','-',entry['url'],'--output',str(part)],check=True)
             else:
                 with urllib.request.urlopen(entry['url'],timeout=60) as f,part.open('wb') as out:shutil.copyfileobj(f,out)
-        if part.stat().st_size!=entry['size'] or digest(part)!=entry['sha256']:
+        if not matches(part,entry):
             bad=part.with_name(part.name+'.bad');part.replace(bad)
             raise RuntimeError('SHA-256 mismatch, retained at '+str(bad))
         part.replace(target);print('Restored '+entry['path'],flush=True)

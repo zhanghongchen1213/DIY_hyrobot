@@ -288,6 +288,8 @@ strings /lib/librknnrt.so | grep "librknnrt version"
 
 ### 下载预训练模型并终端测试
 
+当前上游同名模型包与作者本地旧包有差异，下载校验值和 RKNN 运行库兼容说明见[资源来源说明](7_Resources.md)。原记录的“2.3.0 可用”不等于所有新版模型/运行库组合均已实机验证。
+
 **参考：**[pre-trained models for RKNPU](https://k2-fsa.github.io/sherpa/onnx/rknn/models.html#)
 
 ```shell

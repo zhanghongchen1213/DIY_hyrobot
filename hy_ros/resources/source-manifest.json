@@ -17,10 +17,17 @@
     },
     {
       "path": "0.RK3588S/1.sherpa-onnx/sherpa-onnx-rknn-stream/sherpa-onnx-rk3588-streaming-zipformer-small-bilingual-zh-en-2023-02-16.tar.bz2",
-      "size": 49718022,
-      "sha256": "ff8d3c9b217d0a7834047ed93c4b7e2e5f785e29141d7bc425f49f653405fde3",
+      "size": 49676089,
+      "sha256": "738aeb2ba4e3fe1e2d5d42a421c3e90e889e93c555a83f3a3d740fd0c6827d72",
       "group": "asr",
-      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-rk3588-streaming-zipformer-small-bilingual-zh-en-2023-02-16.tar.bz2"
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-rk3588-streaming-zipformer-small-bilingual-zh-en-2023-02-16.tar.bz2",
+      "previous_versions": [
+        {
+          "label": "author-local-original",
+          "size": 49718022,
+          "sha256": "ff8d3c9b217d0a7834047ed93c4b7e2e5f785e29141d7bc425f49f653405fde3"
+        }
+      ]
     },
     {
       "path": "0.RK3588S/2.rknn-llm/qwen3-vl-2b-instruct_w8a8_rk3588.rkllm",
