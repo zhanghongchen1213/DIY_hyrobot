@@ -1,0 +1,6 @@
+# Paths are relative to this configuration file's directory.
+train: Dataset/train/images
+val: Dataset/valid/images
+test: Dataset/test/images
+nc: 1
+names: [butter]
