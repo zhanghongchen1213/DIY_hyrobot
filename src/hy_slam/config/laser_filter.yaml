@@ -1,0 +1,28 @@
+# 激光雷达数据过滤配置文件
+# 用于滤除机器人自身结构遮挡或特定区域的雷达点云
+# 典型用途：滤除机器人车身内部或后方的雷达数据，避免将自身结构误认为障碍物
+
+laser_filter:
+  ros__parameters:
+    filter1:
+    
+      name: rear_box_filter
+      type: laser_filters/LaserScanBoxFilter
+      params:
+        # 过滤框参考坐标系
+        box_frame: base_link
+
+        # 过滤框范围定义 (单位: 米)
+        # 这是一个矩形盒状区域，定义了需要过滤的空间范围
+        # 滤除雷达后方车身遮挡区域 (坐标系转换为 base_link)
+        max_x: 0.029032
+        min_x: -0.970968
+        max_y: 0.015
+        min_y: -0.015
+        max_z: 1.0
+        min_z: -1.0
+
+        # 过滤模式
+        # false: 删除框内的点 (用于滤除车身)
+        # true:  仅保留框内的点 (删除框外的点)
+        invert: false

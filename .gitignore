@@ -1,0 +1,14 @@
+log
+install
+build
+/source/
+.trae
+node_modules
+_bmad
+_bmad-output
+.claude
+.bun
+/docs/.venv/
+
+**/__pycache__/
+*.pyc

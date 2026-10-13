@@ -1,0 +1,97 @@
+# 定位模式参数配置文件 (Localization Mode)
+# 用途：在已有地图上进行纯定位（类似 AMCL），不进行建图更新。
+# 适用于：导航阶段，加载已保存的 .posegraph 或 .map 地图。
+
+slam_toolbox:
+  ros__parameters:
+    # ========================================================
+    # 求解器插件配置 (Solver Plugin Parameters)
+    # ========================================================
+    # 推荐使用 CeresSolver，它是 Google 开发的高性能非线性最小二乘解算库
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY # 稀疏矩阵求解器，适合 SLAM
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT # 优化策略
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
+
+    # ========================================================
+    # ROS 坐标系与话题配置 (Frames & Topics)
+    # ========================================================
+    odom_frame: odom # 里程计坐标系
+    map_frame: map # 地图坐标系
+    base_frame: base_link # 机器人基座坐标系
+    scan_topic: /scan_filtered # 订阅的雷达话题 (使用经过滤波的话题)
+    mode: localization # 核心模式设置: 'localization' (纯定位) 或 'mapping' (建图)
+
+    # ========================================================
+    # 定位特定参数 (Localization Specific)
+    # ========================================================
+    map_file_name: "" # 地图文件路径 (通常在 launch 文件中通过命令行参数传入，此处留空)
+    map_start_pose: [0.0, 0.0, 0.0] # 初始位姿估计 [x, y, theta]，用于初始化定位
+    map_start_at_dock: true # 如果为 true，忽略 map_start_pose，假设机器人从原点(充电桩)启动
+
+    # ========================================================
+    # 建图/处理核心参数 (Mapping/Processing)
+    # ========================================================
+    debug_logging: false # 是否开启调试日志
+    throttle_scans: 1 # 处理帧率控制 (1 = 处理每一帧，2 = 每隔一帧处理一次)
+    transform_publish_period: 0.05 # 地图到里程计 TF 发布周期 (秒)，0.05s = 20Hz，针对嵌入式平台优化
+    map_update_interval: 5.0 # 地图更新间隔 (秒)，定位模式下影响可视化更新
+    resolution: 0.05 # 地图分辨率 (米/像素)
+    max_laser_range: 12.0 # 雷达最大有效距离 (与建图配置保持一致，乐动ld06为12m)
+    minimum_time_interval: 0.5 # 最小处理时间间隔
+    transform_timeout: 0.2 # TF 变换超时时间
+    tf_buffer_duration: 30. # TF 缓存时长
+    stack_size_to_use: 40000000 # 序列化大地图所需的栈大小 (字节)
+
+    # ========================================================
+    # 扫描匹配参数 (Scan Matching)
+    # ========================================================
+    use_scan_matching: true # 是否启用扫描匹配 (必须为 true)
+    use_scan_barycenter: true # 使用扫描重心进行距离计算
+    # 针对低速机器人优化 (Max v=0.11m/s, w=1.76rad/s)
+    # 降低最小更新距离/角度，避免低速时定位更新停滞
+    minimum_travel_distance: 0.1 # 0.1m (约1秒移动的距离)
+    minimum_travel_heading: 0.2 # 0.2rad (约11.5度)
+    scan_buffer_size: 10 # 扫描缓冲区大小
+    scan_buffer_maximum_scan_distance: 10.0 # 缓冲区最大扫描距离
+    link_match_minimum_response_fine: 0.1
+    link_scan_maximum_distance: 1.5
+
+    # ========================================================
+    # 回环检测参数 (Loop Closure)
+    # 定位模式下，回环检测用于重定位和修正位姿
+    # ========================================================
+    loop_search_maximum_distance: 3.0
+    do_loop_closing: true # 启用回环检测
+    loop_match_minimum_chain_size: 10
+    loop_match_maximum_variance_coarse: 3.0
+    loop_match_minimum_response_coarse: 0.35
+    loop_match_minimum_response_fine: 0.45
+
+    # ========================================================
+    # 相关性搜索参数 (Correlation Parameters)
+    # 影响扫描匹配的精度和范围
+    # ========================================================
+    correlation_search_space_dimension: 0.5
+    correlation_search_space_resolution: 0.01
+    correlation_search_space_smear_deviation: 0.1
+
+    # 回环搜索相关性参数
+    loop_search_space_dimension: 8.0
+    loop_search_space_resolution: 0.05
+    loop_search_space_smear_deviation: 0.03
+
+    # ========================================================
+    # 扫描匹配器罚分参数 (Scan Matcher Penalties)
+    # ========================================================
+    distance_variance_penalty: 0.5
+    angle_variance_penalty: 1.0
+
+    fine_search_angle_offset: 0.00349
+    coarse_search_angle_offset: 0.349
+    coarse_angle_resolution: 0.0349
+    minimum_angle_penalty: 0.9
+    minimum_distance_penalty: 0.5
+    use_response_expansion: true

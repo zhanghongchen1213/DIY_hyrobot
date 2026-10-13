@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>all_launch</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="k@todo.todo">k</maintainer>
+  <license>Apache-2.0</license>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <!-- START添加所有需要的launch文件的依赖 -->
+  <exec_depend>ament_index_python</exec_depend>
+   <!-- 串口相关 -->
+  <exec_depend>uart</exec_depend>
+  <exec_depend>ekf_odom</exec_depend>
+  <exec_depend>butter_robot_description</exec_depend>
+  <!-- 音频相关 -->
+  <!-- 音频相关
+  <exec_depend>audio_asr</exec_depend> 
+  <exec_depend>audio_rkllm</exec_depend> 
+  <exec_depend>audio_tts</exec_depend> 
+  -->
+   <!-- 视频相关
+  <exec_depend>rk_camera</exec_depend>
+  <exec_depend>rk_inference</exec_depend>
+  <exec_depend>rk_streamer</exec_depend>
+  -->
+   <!-- 激光雷达相关
+  <exec_depend>ldlidar_driver_ros2</exec_depend>
+  <exec_depend>hy_slam</exec_depend> 
+  -->
+  <!-- END添加所有需要的launch文件的依赖 -->
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "0.RK3588S/1.sherpa-onnx/sherpa-onnx-cp310/sherpa_onnx-1.12.19-cp310-cp310-manylinux_2_27_aarch64.whl",
+      "size": 23641652,
+      "sha256": "5c11e58e5c5f2f8659b89b38256e5bfde996697e2fe84553a752fc4be5623561",
+      "group": "asr",
+      "url": "https://huggingface.co/csukuangfj/sherpa-onnx-wheels/resolve/main/rknn/1.12.19/sherpa_onnx-1.12.19-cp310-cp310-manylinux_2_27_aarch64.whl"
+    },
+    {
+      "path": "0.RK3588S/1.sherpa-onnx/sherpa-onnx-rknn-stream/librknnrt.so",
+      "size": 7259064,
+      "sha256": "73993ed4b440460825f21611731564503cc1d5a0c123746477da6cd574f34885",
+      "group": "asr",
+      "url": "https://raw.githubusercontent.com/airockchip/rknn-toolkit2/a8dd54d41e92c95b4f95780ed0534362b2c98b92/rknpu2/runtime/Linux/librknn_api/aarch64/librknnrt.so"
+    },
+    {
+      "path": "0.RK3588S/1.sherpa-onnx/sherpa-onnx-rknn-stream/sherpa-onnx-rk3588-streaming-zipformer-small-bilingual-zh-en-2023-02-16.tar.bz2",
+      "size": 49718022,
+      "sha256": "ff8d3c9b217d0a7834047ed93c4b7e2e5f785e29141d7bc425f49f653405fde3",
+      "group": "asr",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-rk3588-streaming-zipformer-small-bilingual-zh-en-2023-02-16.tar.bz2"
+    },
+    {
+      "path": "0.RK3588S/2.rknn-llm/qwen3-vl-2b-instruct_w8a8_rk3588.rkllm",
+      "size": 2375022956,
+      "sha256": "d5474340221fc495c70e1ec2c7dafc4ebf88292ce466db7e771e3a20b99cf21f",
+      "group": "qwen",
+      "url": "https://huggingface.co/JiahaoLi/Qwen3-VL-RK3588/resolve/025f0aa9b6ed2b22351acb2ebca30f4bd9ecdfe4/qwen3-vl-2b-instruct_w8a8_rk3588.rkllm"
+    },
+    {
+      "path": "0.RK3588S/2.rknn-llm/qwen3-vl-2b_vision_rk3588.rknn",
+      "size": 850488413,
+      "sha256": "3d707ef5dbf0e420ac48e57b5bf0ed6c0fd1d5d048c29d81e1b5a8d051ab7ea8",
+      "group": "qwen",
+      "url": "https://huggingface.co/JiahaoLi/Qwen3-VL-RK3588/resolve/025f0aa9b6ed2b22351acb2ebca30f4bd9ecdfe4/qwen3-vl-2b_vision_rk3588.rknn"
+    },
+    {
+      "path": "0.RK3588S/3.butter_yolov8n/butter.jpg",
+      "size": 521995,
+      "sha256": "9d2ce207340850b6e61fe6fffc53f2713e854387228054efff4fd2a3e436b317",
+      "group": "project",
+      "local": "resources/project/0.RK3588S/3.butter_yolov8n/butter.jpg"
+    },
+    {
+      "path": "0.RK3588S/3.butter_yolov8n/test.py",
+      "size": 9676,
+      "sha256": "54dd15f2f283c4a79297d2566a0e52c58f3a1643cb26b9ea12883014c2783520",
+      "group": "project",
+      "local": "resources/project/0.RK3588S/3.butter_yolov8n/test.py"
+    },
+    {
+      "path": "0.RK3588S/3.butter_yolov8n/yolov8.rknn",
+      "size": 5531857,
+      "sha256": "424c79619188b56d7c0f009d56c0098fbcdf0a31376704e9b54d1fc0671a786d",
+      "group": "project",
+      "local": "resources/project/0.RK3588S/3.butter_yolov8n/yolov8.rknn"
+    },
+    {
+      "path": "1.Lidar/ldlidar_driver_python2.py",
+      "size": 2811,
+      "sha256": "6f569cde60eaad7ab9f34a2173427197a566bca1e9bbe275c6f42475a8aacd0d",
+      "group": "project",
+      "local": "resources/project/1.Lidar/ldlidar_driver_python2.py"
+    },
+    {
+      "path": "1.Lidar/ldlidar_driver_python3.py",
+      "size": 2749,
+      "sha256": "3bd43de13ce433ea3afbd843d057e7c6a096b9891da53d3542e260642eb44511",
+      "group": "project",
+      "local": "resources/project/1.Lidar/ldlidar_driver_python3.py"
+    },
+    {
+      "path": "1.Lidar/wheeltec_udev.sh",
+      "size": 250,
+      "sha256": "96bcd0696832033d8dae6b8d152a64a348e83147b93b227b8e7677b2d1c6eb54",
+      "group": "project",
+      "local": "resources/project/1.Lidar/wheeltec_udev.sh"
+    }
+  ]
+}

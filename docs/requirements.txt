@@ -1,0 +1,4 @@
+sphinx>=7.0,<8.0
+sphinx_rtd_theme>=2.0
+myst-parser>=3.0
+sphinx-markdown-tables>=0.0.17
