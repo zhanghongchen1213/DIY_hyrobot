@@ -1,0 +1,8 @@
+# Resource archives are published as release assets.
+/.resource-cache/
+/Solidworks/
+/hy_ros/source/
+/butter_yolov8n_train/Dataset/
+**/.venv/
+**/__pycache__/
+*.pyc

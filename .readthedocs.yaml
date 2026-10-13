@@ -1,0 +1,10 @@
+version: 2
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.11"
+sphinx:
+  configuration: hy_ros/docs/source/conf.py
+python:
+  install:
+    - requirements: hy_ros/docs/requirements.txt

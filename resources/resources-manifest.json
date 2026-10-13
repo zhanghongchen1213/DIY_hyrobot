@@ -1,0 +1,646 @@
+{
+  "schema": 1,
+  "repository": "zhanghongchen1213/DIY_hyrobot",
+  "release": "hardware-2026-10-13",
+  "packages": [
+    {
+      "group": "Solidworks",
+      "destination": ".",
+      "first_volume": "Solidworks-2026-10-13.7z",
+      "assets": [
+        {
+          "name": "Solidworks-2026-10-13.7z",
+          "size": 288609744,
+          "sha256": "9ec2738f7393e5cd15cbea0686e9557505f6b9a9c0edf9b4c6387d3d76ea1533"
+        }
+      ],
+      "files": [
+        {
+          "path": "Solidworks/黄油机器人/3D_舵机转接板_2025-11-29.SLDPRT",
+          "size": 7747705,
+          "sha256": "8dcf31596180dc6bea057e67e0d0bb09e68cd8c9971ee37b41a5e7b7b1728ddf"
+        },
+        {
+          "path": "Solidworks/黄油机器人/3D_驱动板_2025-11-29.SLDPRT",
+          "size": 48034954,
+          "sha256": "9700c36cceacac0eccf7ba5cabc73f811168e12357710504d29071ea9205c9e0"
+        },
+        {
+          "path": "Solidworks/黄油机器人/GB／T819．1-2000十字槽沉头螺钉M1．6×10.SLDPRT",
+          "size": 129513,
+          "sha256": "2c3361ac316c445bcf3a921a429c3560cb5a7468d24f6656f727d2f44258f638"
+        },
+        {
+          "path": "Solidworks/黄油机器人/GB／T819．1-2000十字槽沉头螺钉M1．6×6.SLDPRT",
+          "size": 138273,
+          "sha256": "085e1f09035680b3c6e33937447fcf3a4e52d47e723bc4afefb7ac44efb226ff"
+        },
+        {
+          "path": "Solidworks/黄油机器人/GB／T822-2000十字槽圆柱头螺钉M2×5.SLDPRT",
+          "size": 204776,
+          "sha256": "66346167ce0bddf2a3012de05f8de2a67d14b14d60e82f9adb117ac6b1630db5"
+        },
+        {
+          "path": "Solidworks/黄油机器人/GB／T822-2000十字槽圆柱头螺钉M2．5×8.SLDPRT",
+          "size": 202485,
+          "sha256": "db5645407b4e1a19b7818d887b25c665b663559ee6db837bf415a92bdd39c47e"
+        },
+        {
+          "path": "Solidworks/黄油机器人/XLDC-01.SLDPRT",
+          "size": 363008,
+          "sha256": "04a3b77f5ddc8148aa184f0bd2e95f18a14e7150aacc6dfa5ffdf987d6e79bc2"
+        },
+        {
+          "path": "Solidworks/黄油机器人/XLDC-02.SLDPRT",
+          "size": 158343,
+          "sha256": "7571bdf9530fcbdeec2a679e2b36d5299452d71bbd99c333ec7c88f93b091366"
+        },
+        {
+          "path": "Solidworks/黄油机器人/从动轮装配.SLDASM",
+          "size": 239659,
+          "sha256": "1c01b1384912f45b5cd37f430b5610648d80c9855b50818a53f6dbb5ceba5305"
+        },
+        {
+          "path": "Solidworks/黄油机器人/副动轮固定件.SLDPRT",
+          "size": 204725,
+          "sha256": "7d91c3410f75e37256dcd5e9fb0dbdcdec9d2719077f96feba0ae4e73a1c0b49"
+        },
+        {
+          "path": "Solidworks/黄油机器人/单侧履带装配.SLDASM",
+          "size": 582977,
+          "sha256": "421e3e271b57e42be92a8b77889d5a09fc34d9cb17def7990924bf2418e803c3"
+        },
+        {
+          "path": "Solidworks/黄油机器人/右手装配.SLDASM",
+          "size": 235155,
+          "sha256": "24178eea5826c46355e584783ef145c1d6bd5639be3b33c9155f0c99e2391173"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/3000mAh电池.SLDPRT",
+          "size": 248705,
+          "sha256": "b1c4e5914d05ebb1ce32f8e1461c56c203c9f5014a24839adabffba546877bcb"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/5000mAh电池.SLDPRT",
+          "size": 258952,
+          "sha256": "f64d6296248a8576ec9404ec1520781ef387d749bd60cfd4c0f2b6f46da5bd2f"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/MG90S舵机.SLDPRT",
+          "size": 224215,
+          "sha256": "b7b76485af2f32a559b74de56ff7a758f011b8bb2b2cb767833a2bcfdf49cbc4"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/N20减速电机.SLDPRT",
+          "size": 191644,
+          "sha256": "a2820d22d242bc7db2a78265ceb611b077f8644df0df1a11a8a7d062baab37d8"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/~$5000mAh电池.SLDPRT",
+          "size": 14,
+          "sha256": "853b8dd082e1c73dc2ab2af26d2e903b2e22eaaf9721d63b11417fdbac556e06"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/从动轮.SLDPRT",
+          "size": 214805,
+          "sha256": "68bc690f621e2199c41ba784e820ba8a05a80504648cf60b068d0db1ac94d703"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/L型支架.SLDPRT",
+          "size": 454656,
+          "sha256": "b5707c49e98015037e05e852d3d936fcce8f5075fbe54f5d51867fee5950c02e"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/Thumbs.db",
+          "size": 72192,
+          "sha256": "3931c8320aab8f01bc73685a1c57f66e85d5d45b96a68239eac4bace09cb43fc"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/U型梁支架.SLDPRT",
+          "size": 259010,
+          "sha256": "f26014088bbc14d1ce7565b3d3a5fe1eb2833c096ecfa87b87e925861b422b6d"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/一字型支架.SLDPRT",
+          "size": 281600,
+          "sha256": "5ae3aa04263b2f7423158954af9904a4d748284497e2aa36419716a8962b0ce0"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/多功能支架.SLDPRT",
+          "size": 360960,
+          "sha256": "b24d3d06ca6c37f948336bc6b40b0b66b857f9b2d38a190a0ace8a486733cb2b"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/斜U支架.SLDPRT",
+          "size": 1005056,
+          "sha256": "3236998fb4486a3f11a14b1babe45144bdd15d8b354b2146ec73f90d161d8e04"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/杯式轴承.SLDPRT",
+          "size": 268288,
+          "sha256": "aa0b1171efed62728890ea3bc97e2c97456caeed91ba4396496d486799137e38"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/短U支架.SLDPRT",
+          "size": 270893,
+          "sha256": "083a5ab8b3ef50058a04cb5099f343d0fca83817ba35b51ac9cab4886b502a7b"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/脚板支架.SLDPRT",
+          "size": 152545,
+          "sha256": "ea8f5180aa648f21d290027cc1e7b90dc91c642388caebe74acd3334cedc4c44"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/金属主舵盘.SLDPRT",
+          "size": 259072,
+          "sha256": "686f46f807b9fe8eab60cd1abb7e62954f41c8fa606581a94660d7aa01927aa9"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/000 PRT/长U支架.SLDPRT",
+          "size": 578048,
+          "sha256": "55af2e3ed66783e2385e918d3d3c454fcc101d071ad434631b521dc6fa954b18"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/L型支架.STEP",
+          "size": 88669,
+          "sha256": "e277fffd72b1eceb7dce2dd9ba652289ca805b9715a5a3254335db0eb17b8289"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/U型梁.STEP",
+          "size": 321924,
+          "sha256": "ad752d15ec81d2ce62023904c07b62bb501a5dd67746cd586692043a1737fefb"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/一字型支架.STEP",
+          "size": 102310,
+          "sha256": "b408ce998c871f7ac6c72f59d27df1b90e252cf7059a2fb1d3720e7b1912c9c0"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/大脚掌.STEP",
+          "size": 177406,
+          "sha256": "1ebbee9e7afe38b81a2e8776b73433cb9a7d371763b7c424bdbb2a824d6a04a4"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/斜U.STEP",
+          "size": 154115,
+          "sha256": "05b1657919ffb977eace862867899416defdc40d31a1c761377cf656287b343d"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/杯式轴承.STEP",
+          "size": 21753,
+          "sha256": "a39ec1100c5cb6944528c1cfc86b4d155558f696eb19892365e6caad881f8942"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/短U.STEP",
+          "size": 153166,
+          "sha256": "12d9b4418ebdd1fd8bd773ea810a5ae959bdc03e8c74146c26d26371b10f3288"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/舵机支架.STEP",
+          "size": 278381,
+          "sha256": "cd9509f6c16f493e0e6ce9155a086c363715f3f44d877de588caf7c83a8d88c7"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/金属主舵盘.STEP",
+          "size": 281854,
+          "sha256": "02ea98ab879a368c6c4af7bdd95d5b5270cd9f786eb7e14c3ae28be92f3ba32c"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/001 STP/长U支架.STEP",
+          "size": 164386,
+          "sha256": "35d309a804578b6df9a913db7525b611e80b8167de14af91e5b17a6f9f5694ef"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/L型支架.DXF",
+          "size": 95493,
+          "sha256": "bee842a9dcbb612ab1b68386d068c2cfbc7cea7089670ec5eec3821e6c947cb0"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/U型梁支架.DXF",
+          "size": 151325,
+          "sha256": "4101a3bbfeaec33d8a8be26b272834f176d9e50ee824c55eaf442704c46ace65"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/一字型支架.DXF",
+          "size": 69226,
+          "sha256": "649b381177bf72de6ba4367577a07a3b1e8eb197e09407e8a258a8c5c1f4fd40"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/多功能支架.DXF",
+          "size": 151004,
+          "sha256": "7507cd720d0772d76fe62794c0647669c4c69f9bb0580414f97dd3f0c69b6e3f"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/斜U支架.DXF",
+          "size": 114691,
+          "sha256": "90299e62288dc6c40d8e51f08305ae89ee09feddc525ed55eb090e9601f1cdae"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/杯式轴承.DXF",
+          "size": 64486,
+          "sha256": "402464eecafbfb530131fc4c37f6e97375c61f5a568934118ab536667b1e0bef"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/短U支架.DXF",
+          "size": 103601,
+          "sha256": "d8698cdef02d76a15e0d2ac73ced6cd73ac51f068a35f7dfcc13bfdb3de5b8fe"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/脚板支架.DXF",
+          "size": 125015,
+          "sha256": "858cb4a5556c19b95fbccf0722ebf0c203a4926ded75d5236ed97fea66d2ff37"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/金属主舵盘.DXF",
+          "size": 103580,
+          "sha256": "d2b765589cc7f3b2c05be05017c7bf995c8b9cbe60ce02518989839790b8fbb0"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/001 单轴支架图纸/002 CAD/长U支架.DXF",
+          "size": 110224,
+          "sha256": "469c160f12f0cb5da18014f19359aa5bea8c890475b4605d0564d6042a6d1d56"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/U型大底板.dwg",
+          "size": 40608,
+          "sha256": "1f8ea7e8e0074d123c92559b017b21340c0fe4853fe28e5fa846c0330effa531"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴支架/U型大底板.stp",
+          "size": 182047,
+          "sha256": "7e8f5a78a75f191eb7ce18ab802e0882ee58a01a5de020f73622ddc2953f1b34"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/单轴舵机PM20S.SLDPRT",
+          "size": 3481047,
+          "sha256": "49f53c2bddf7ca994f0bd86f94e6014de7329f87c5c1576e66b54840dff4fcf5"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/喇叭.SLDPRT",
+          "size": 154877,
+          "sha256": "d1455af822d8dbb8fd459db2b00c5311e4171a6589efbdf3e1eb2d103d99c2a3"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/大臂.SLDPRT",
+          "size": 134830,
+          "sha256": "3b5c106bfa2294c1ec380b3c31a877bf619d0c48ec2dcfb5ba47c2d573ffef80"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/小履带.SLDPRT",
+          "size": 381847,
+          "sha256": "6b7732e81bff81c670f1f52a7cba1f7e881c6a0031a531b4d4ac0a36956b25c1"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/小臂.SLDPRT",
+          "size": 118964,
+          "sha256": "ca828b92f5ecb871baf1c014201562e0d608f3eeed62406502102255d5f05190"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/手掌.SLDPRT",
+          "size": 121485,
+          "sha256": "095b7354d184f3826e1776d4e06740e90098776bf3712b78b8fa56fea5858daf"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/摄像头板.SLDPRT",
+          "size": 140081,
+          "sha256": "6c8cdf7420affb5ad184f24fde48a42784225200561080c8dd2f372cf0e5d168"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/雷达_乐动LD19.SLDPRT",
+          "size": 9305837,
+          "sha256": "fd997766666f6dc467d6ba2730e300b9dce1b86e4913eb5bfa65992de1ec4f3c"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/香橙派3B.SLDPRT",
+          "size": 10421085,
+          "sha256": "476c000536366cdfe5c7d9d872a2d0c91dd616a8ac9c1baa70ba6d33e744b255"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/驱动电源集成板.SLDPRT",
+          "size": 72701170,
+          "sha256": "8ecefc89c882b8516c791c10aa8760a20ac48ab29865b947f386b4a7c3bd6593"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/驱动电源集成板_2025-05-22.SLDPRT",
+          "size": 72966757,
+          "sha256": "b7752af9aa73eceab6a73204c851e0287382e395af93796a81d350f3136a09a3"
+        },
+        {
+          "path": "Solidworks/黄油机器人/外购件/驱动轮.SLDPRT",
+          "size": 563631,
+          "sha256": "e1d7ff4861abf34e60d733b6086f5c8fdbb158559b01d5997ae440cce1d7ef2c"
+        },
+        {
+          "path": "Solidworks/黄油机器人/安装板.SLDPRT",
+          "size": 271885,
+          "sha256": "3019036d98b386300d656e64647892e01d09c328915aba054adead06860f3d96"
+        },
+        {
+          "path": "Solidworks/黄油机器人/左手装配.SLDASM",
+          "size": 156470,
+          "sha256": "9eef64a8da9d53db4613243d57212aacd1670ba941e940440c7e40481f074ff9"
+        },
+        {
+          "path": "Solidworks/黄油机器人/底盘固定板.SLDPRT",
+          "size": 392717,
+          "sha256": "446a6432b21b422bde473a457c665e7fb8773fb732f3b03c22ddd368cec1f69c"
+        },
+        {
+          "path": "Solidworks/黄油机器人/底盘固定板.STEP",
+          "size": 261082,
+          "sha256": "52a9b14360cb8beca335339abfff31af4086881e17ac411009a11324186b15f1"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB6170-M4-ZN-10.SLDPRT",
+          "size": 141127,
+          "sha256": "445f05e8e20e08e0f769075937441d26e46191f4acb2eb9f68785bb195773590"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB818-M3X10-ZN-4.8.SLDPRT",
+          "size": 142419,
+          "sha256": "c73017e0ea475f4c7829069f39b18973734e1056740d320b3dd4da53a87692b2"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB818-M4XX-4.8.SLDPRT",
+          "size": 179934,
+          "sha256": "f911db941adf52ee54b735c812ff5fbd81690a85a205b507e33e7317b4df8471"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T117-2000圆锥销A型4×10.SLDPRT",
+          "size": 230266,
+          "sha256": "285818b2b939651607fa7936dd4e4a4cf5d43012e6070895b8ccb3a001507ef3"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T117-2000圆锥销A型6×15.SLDPRT",
+          "size": 230406,
+          "sha256": "b0d40492ba41a9a17c14eb75ff4b06f787bbca2a453a42ca9447a19ccaff85f5"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T6170-20001型六角螺母A级和B级M2.SLDPRT",
+          "size": 129021,
+          "sha256": "94f9566e7e0ab56ae29fffec04748a5dad5f471fb2b9188a1235c5938edcbba5"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T6170-20001型六角螺母A级和B级M2．5.SLDPRT",
+          "size": 137118,
+          "sha256": "acdb98302f038e721b78237a0cab7fa1e5cd668b0a73e5a4b51c1c513ef9101e"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T6170-20001型六角螺母A级和B级M3.SLDPRT",
+          "size": 118938,
+          "sha256": "0790b7ff9b1956b72d9f93722345458f39fa5a23090672026ed30d7ed2bae102"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T818-2000十字槽盘头螺钉M3×5.SLDPRT",
+          "size": 201888,
+          "sha256": "85fb2e3107d76b45016151208d5a2d35f189c8d640e6a89734ec7ddbb08bcfe3"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T819．1-2000十字槽沉头螺钉M2×6.SLDPRT",
+          "size": 169688,
+          "sha256": "b618669a16a35f71951d630f4dd9aec4e123f0f8e6f776563faaca2e2a09e032"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T819．1-2000十字槽沉头螺钉M2×8.SLDPRT",
+          "size": 118622,
+          "sha256": "69eb06d745702fe95879cd3f4183f700b4da9fc6ec874b2a5bb76f6a2ba61554"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T819．1-2000十字槽沉头螺钉M2．5×6.SLDPRT",
+          "size": 140687,
+          "sha256": "a5c2ca6bf087c1aafa6fd47f9e414521af86c7531d32e0197a65c99c1b7f9771"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T819．1-2000十字槽沉头螺钉M3×10.SLDPRT",
+          "size": 116028,
+          "sha256": "3034ea583c85168a7e01a18644f7c88a5b548ff8c6d4b24bb74a1b9c1dabfff2"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T819．1-2000十字槽沉头螺钉M3×12.SLDPRT",
+          "size": 137816,
+          "sha256": "b38670d14dbb052a18def2ead022c96d1069af4cda06dba95464b00a7c272b4f"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T819．1-2000十字槽沉头螺钉M3×40.SLDPRT",
+          "size": 163017,
+          "sha256": "aa1017bb825014acff8b93fc971bdbc6a8be428292204b9b9eab1dfcfb521bde"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T819．1-2000十字槽沉头螺钉M3×6.SLDPRT",
+          "size": 141699,
+          "sha256": "0d27729c69d9cba12094f04bd804ae1b4ddd05bc7c68460b8ad0386b2dc68b5b"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T819．1-2000十字槽沉头螺钉M3×7.SLDPRT",
+          "size": 139353,
+          "sha256": "17023225375618703e094f9fd6e6a87b93a4740e7cc69313d2a699eeff89188b"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T819．1-2000十字槽沉头螺钉M3×8.SLDPRT",
+          "size": 121956,
+          "sha256": "b0e1fc5fdd6cda7a1b53da684c543dfc103a2a19bbdbe1965cdf343e7ccc2282"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T822-2000十字槽圆柱头螺钉M2．5×10.SLDPRT",
+          "size": 198444,
+          "sha256": "8bab2bb2c5439a34dc7b71ea6fb94c2e862fc872595bab3ee0745b8993723ffe"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T822-2000十字槽圆柱头螺钉M2．5×6.SLDPRT",
+          "size": 209510,
+          "sha256": "b8c850d32da57fbff0541a1cf9b46c650628be20ad0c41de0bcba1c0637c6faa"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T822-2000十字槽圆柱头螺钉M2．5×8.SLDPRT",
+          "size": 260279,
+          "sha256": "9f7a4fe0512a671034979a5dd7e0eb99179e2d4ac5db5a50615c9c26a14a4ade"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T822-2000十字槽圆柱头螺钉M3×6.SLDPRT",
+          "size": 207971,
+          "sha256": "30b6f550cce6a8a5af6c6932e8575095df031547814a9a82f60057ab9aca2c40"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/GB／T822-2000十字槽圆柱头螺钉M3×8.SLDPRT",
+          "size": 200372,
+          "sha256": "4a17ae22201a77070a885546b34da1937cdcba4177211b52f0d643d063db72b1"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/杯士轴承384.SLDPRT",
+          "size": 156149,
+          "sha256": "74aa62417d3e4f971456b06e6e255dea0411963e8c678d3b1ce884d9f19df02c"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/热熔螺母M2.5_4.SLDPRT",
+          "size": 124589,
+          "sha256": "32d3c5d563809063070a1781a5b40c68a21eeebd4b8468de016909b20aee6238"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/热熔螺母M2.5_8.SLDPRT",
+          "size": 125898,
+          "sha256": "87989a86f144f75ae54e687bcd94e61ab23469f1584d3f8d90f1367b0136b6b9"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/热熔螺母M2.SLDPRT",
+          "size": 107251,
+          "sha256": "e7b35fa3e2a0147e5c02da2dcdb53973a4964dfeb826dbf6513fe06155e00521"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/热熔螺母M3_4.SLDPRT",
+          "size": 111706,
+          "sha256": "38aa3284988a70e44af73b38f4a446feac972ec1f2c2abd5f45966efbae660bd"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/铜螺柱M3x15_4.SLDPRT",
+          "size": 94099,
+          "sha256": "4204ac0a7b0ea4ac84028aa37bc079c890c0d321ca4ded0038fd8401a4e4d843"
+        },
+        {
+          "path": "Solidworks/黄油机器人/标准件/铜螺柱M3x19_4.SLDPRT",
+          "size": 90747,
+          "sha256": "3d6fd73f5ef6bdfa8664610f8815dd326a08d4c3f4e29e2c1b1c0daadc25dcc2"
+        },
+        {
+          "path": "Solidworks/黄油机器人/盖子.SLDPRT",
+          "size": 259118,
+          "sha256": "255209993d1338cba155d53f579417829c129083fd924a68795221a8cc84fb1c"
+        },
+        {
+          "path": "Solidworks/黄油机器人/立柱.SLDPRT",
+          "size": 358485,
+          "sha256": "979d8e3628df17f4b8a2a051aa986a1f4adb0e43ec2d6e82330cb9122829c2df"
+        },
+        {
+          "path": "Solidworks/黄油机器人/联轴器.pdf",
+          "size": 49935,
+          "sha256": "839a120b0ed403ea6b4d5d1d979f1ac8a1fe024964fbbed6363ea5372385ea9b"
+        },
+        {
+          "path": "Solidworks/黄油机器人/联轴器.sldprt",
+          "size": 115528,
+          "sha256": "89392944d7380c7eb51c46ef12f26f5f8964665c062483f4cc53df86ed865ff4"
+        },
+        {
+          "path": "Solidworks/黄油机器人/联轴器.step",
+          "size": 51575,
+          "sha256": "14e80eec9e35f995fde2b2b8e2b95fc02eecd83a8b9723331c572ecfada52a40"
+        },
+        {
+          "path": "Solidworks/黄油机器人/联轴器CNC.pdf",
+          "size": 51829,
+          "sha256": "e6f7a9812fc913c276b69fac1aff1794de95a8afb3b991ba60cfad502e24b4bd"
+        },
+        {
+          "path": "Solidworks/黄油机器人/联轴器CNC.slddrw",
+          "size": 204610,
+          "sha256": "b426cd217cf321049ce3cad80ab65c7015c4e577058a2002b30a3b773bded74a"
+        },
+        {
+          "path": "Solidworks/黄油机器人/联轴器CNC.SLDPRT",
+          "size": 151961,
+          "sha256": "33ce2766060d0f2c7533bf4833d33eb1e65a4f12233b95344dd957eaa1aaf9aa"
+        },
+        {
+          "path": "Solidworks/黄油机器人/联轴器CNC.STEP",
+          "size": 69828,
+          "sha256": "23f86e990fc25d59e2294ffaa30721a5e82cd80cc778afe34b5a9df93237482a"
+        },
+        {
+          "path": "Solidworks/黄油机器人/脑袋.SLDPRT",
+          "size": 283626,
+          "sha256": "af208c6fe9158599851ccc86913e5d239e9c4a2afd8d5886bbfa62f33966649d"
+        },
+        {
+          "path": "Solidworks/黄油机器人/舵机装配.SLDASM",
+          "size": 1785239,
+          "sha256": "a80a1d67181dc1725516aa2f1ccc9fe50ac2f9517f57cd6cc954399c7def088c"
+        },
+        {
+          "path": "Solidworks/黄油机器人/虚拟线缆.SLDPRT",
+          "size": 205088,
+          "sha256": "4ecf4f7cdc7fad4cd9851f7e7928d5e486b26e2f54784a7601a59e0e995a1625"
+        },
+        {
+          "path": "Solidworks/黄油机器人/转接座.SLDPRT",
+          "size": 232407,
+          "sha256": "f983da82c35f38f221ab3e4f1c35d8ce35667f6dc8fa2a57c7824e8bde377678"
+        },
+        {
+          "path": "Solidworks/黄油机器人/遮挡件.SLDPRT",
+          "size": 165304,
+          "sha256": "5a8fed02f1d1ffc9577af18e8a285d084943317c25ea04ef9e8a8729b2ca3cfc"
+        },
+        {
+          "path": "Solidworks/黄油机器人/香橙派固定板.SLDPRT",
+          "size": 223192,
+          "sha256": "6596649887bce3ef566d4cbdf74166ecf75d75d72aac0a784eac273d3abf82b7"
+        },
+        {
+          "path": "Solidworks/黄油机器人/驱动轮装配.SLDASM",
+          "size": 428376,
+          "sha256": "0d6ff2c4378dfa5fb5abefea95e24ba560d2d79450f2b460b12bd69740b1ffc2"
+        },
+        {
+          "path": "Solidworks/黄油机器人/黄油托盘示意.SLDPRT",
+          "size": 95576,
+          "sha256": "b1612292b163e7c287b5ec2fd0634e1b056d70d99848b3563526a640445e5f73"
+        },
+        {
+          "path": "Solidworks/黄油机器人/黄油机器人总装.SLDASM",
+          "size": 27796185,
+          "sha256": "6b7334875d3820bbc81d3ab736dc9e468c2952c6b57aade63474dcfabd534f5c"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/IMG_202512129949_1920x1080.png",
+          "size": 1766693,
+          "sha256": "dae0cf52df4399fa3accb1ee40a82f715c7dba9a6502c4f5b201bfd6604b4ac6"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/屏幕截图 2025-12-12 084811.png",
+          "size": 176271,
+          "sha256": "ba2378f0a574af7c0f3b09f90f67a787e92c75aa7cd0004f806e2835f9c81780"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/示意图.png",
+          "size": 156487,
+          "sha256": "c015600319f25332abd4fa18bde12f9eec264a7d2261400e6bab50ac1ee25e92"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/黄油机器人.obj",
+          "size": 34824199,
+          "sha256": "644f8e307b22c796f70e2d522dfa20bf2a5120d5155b1b10bb757cf08068b553"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/黄油机器人.stl",
+          "size": 24997284,
+          "sha256": "ab6b2595b348506623ab5d9d1f3481044b375191b3f0c1e48c7f72a8dc7cc189"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/黄油机器人右视图.png",
+          "size": 1637734,
+          "sha256": "a69c8b8f443b00afc84d46dcd6a254517bde8efb25611216afa007a3c6e3adcb"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/黄油机器人后视图.png",
+          "size": 1713351,
+          "sha256": "aa79a8506b24d16b72d150fa5c289de178d95f9d31c39d9c0d6807bc2358a449"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/黄油机器人左视图.png",
+          "size": 1673876,
+          "sha256": "687014693daeba3f53a4286e9b584b4e51944d8f9da865896f55f41b1501ec9d"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/黄油机器人正视图.png",
+          "size": 1760713,
+          "sha256": "f29674a9ebd36b1b2b5aa70eaf439a7c70517ccb4cbba67581ac1c1e58733bca"
+        },
+        {
+          "path": "Solidworks/黄油机器人3D设计图/黄油机器人设计图@凡科快图.png",
+          "size": 3667018,
+          "sha256": "31ed747b67fd253d53025f51721fea258ccc23fd101e210d3587109918dd3b00"
+        }
+      ]
+    }
+  ]
+}
