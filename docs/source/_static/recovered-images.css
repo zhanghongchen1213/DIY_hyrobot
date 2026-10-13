@@ -5,3 +5,10 @@
 .recovered-product-gallery td { width: 50%; white-space: normal !important; vertical-align: middle; }
 .recovered-product-gallery td p { margin: 0; }
 .recovered-product-gallery img { display: block; width: 100%; height: auto; }
+
+/* Long paths and checksums should wrap instead of widening mobile pages. */
+.rst-content { overflow-wrap: anywhere; }
+.rst-content code.literal, .rst-content code.literal .pre {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
