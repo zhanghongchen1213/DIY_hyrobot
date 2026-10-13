@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(comment-generator)",
+      "Skill(comment-generator:*)"
+    ]
+  }
+}
