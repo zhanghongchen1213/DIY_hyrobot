@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>rk_camera</name>
+  <version>0.0.0</version>
+  <description>GStreamer based camera node for RK3588</description>
+  <maintainer email="k@todo.todo">k</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>  <!-- 新增 rclcpp_components 依赖 -->
+  <depend>sensor_msgs</depend> <!-- 新增 sensor_msgs 依赖 -->
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+  
+  <!-- GStreamer 依赖 (通常作为系统依赖，不一定在 rosdep 中有，但这里声明以示完整性) -->
+  <!-- <exec_depend>libgstreamer1.0-dev</exec_depend> -->
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

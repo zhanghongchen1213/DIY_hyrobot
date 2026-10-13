@@ -1,0 +1,94 @@
+# 在线异步建图参数配置文件 (Online Async Mapping)
+# 用途：用于实时构建地图。
+# 特点：异步处理，适合计算资源有限的嵌入式平台（如 RK3588），即使建图处理滞后也不会阻塞传感器数据的采集。
+
+slam_toolbox:
+  ros__parameters:
+    # ========================================================
+    # 求解器插件配置 (Solver Plugin Parameters)
+    # ========================================================
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
+    ceres_loss_funciton : None
+    ceres_loss_funciton : None
+    ceres_loss_funciton : None
+    ceres_loss_funciton : None``````````````````````````````````````` 
+
+
+    # ========================================================
+    # ROS 坐标系与话题配置 (Frames & Topics)
+    # ========================================================
+    odom_frame: odom # 里程计坐标系
+    map_frame: map # 地图坐标系
+    base_frame: base_link # 机器人基座坐标系
+    scan_topic: /scan # 订阅经过滤波的雷达话题（laser_filter配置了keep_point_count保持点数恒定）
+    mode: mapping # 核心模式设置: 'mapping' (建图)
+
+    # ========================================================
+    # 建图核心参数 (Mapping)
+    # ========================================================
+    debug_logging: false
+    throttle_scans: 1 # 扫描处理频率控制 (1=全处理)
+    transform_publish_period: 0.02 # TF 发布周期 (0.02s = 50Hz)，提高频率确保实时性
+    map_update_interval: 1.0 # 地图更新间隔 (秒)，从5.0降到1.0，foxglove实时可见
+    resolution: 0.05 # 地图分辨率 (米/像素)，越小越精细但消耗内存
+    max_laser_range: 12.0 # 雷达最大有效距离 (根据硬件修改，乐动ld06为12m)
+    minimum_time_interval: 0.5 # 两次扫描匹配更新的最小时间间隔
+    transform_timeout: 1.0 # 🔧 关键修复：从0.2增加到1.0秒，解决静态TF时间戳问题
+    tf_buffer_duration: 30.
+    stack_size_to_use: 40000000 # 增加程序栈大小以支持大型地图的序列化
+
+    # ========================================================
+    # 扫描匹配参数 (Scan Matching)
+    # 决定了如何将新的一帧雷达数据拼接到现有地图上
+    # ========================================================
+    use_scan_matching: true
+    use_scan_barycenter: true
+    # 针对低速机器人优化 (Max v=0.11m/s, w=1.76rad/s)
+    # 降低最小更新距离/角度，保证低速移动时地图也能及时更新
+    minimum_travel_distance: 0.1 # 0.1m (约1秒移动的距离)
+    minimum_travel_heading: 0.2 # 0.2rad (约11.5度)
+    scan_buffer_size: 10
+    scan_buffer_maximum_scan_distance: 10.0
+    link_match_minimum_response_fine: 0.1
+    link_scan_maximum_distance: 1.5
+
+    # ========================================================
+    # 回环检测参数 (Loop Closure)
+    # 检测机器人是否回到之前的位置，用于消除累计误差 (闭环)
+    # ========================================================
+    loop_search_maximum_distance: 3.0 # 回环搜索的最大距离半径
+    do_loop_closing: true # 启用回环检测 (强烈建议开启)
+    loop_match_minimum_chain_size: 10
+    loop_match_maximum_variance_coarse: 3.0
+    loop_match_minimum_response_coarse: 0.35
+    loop_match_minimum_response_fine: 0.45
+
+    # ========================================================
+    # 相关性搜索参数 (Correlation Parameters)
+    # ========================================================
+    correlation_search_space_dimension: 0.5
+    correlation_search_space_resolution: 0.01
+    correlation_search_space_smear_deviation: 0.1
+
+    # Loop Closure Parameters
+    loop_search_space_dimension: 8.0
+    loop_search_space_resolution: 0.05
+    loop_search_space_smear_deviation: 0.03
+
+    # ========================================================
+    # 扫描匹配器罚分参数 (Scan Matcher Penalties)
+    # ========================================================
+    distance_variance_penalty: 0.5
+    angle_variance_penalty: 1.0
+
+    fine_search_angle_offset: 0.00349
+    coarse_search_angle_offset: 0.349
+    coarse_angle_resolution: 0.0349
+    minimum_angle_penalty: 0.9
+    minimum_distance_penalty: 0.5
+    use_response_expansion: true
