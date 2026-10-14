@@ -15,8 +15,9 @@ author = '鸿尘客'
 
 extensions = ['myst_parser', 'sphinx_markdown_tables']
 myst_enable_extensions = ['attrs_inline', 'colon_fence']
+myst_heading_anchors = 3
 
-templates_path = ['_templates']
+templates_path = []
 exclude_patterns = []
 
 language = 'zh_CN'

@@ -1,49 +1,67 @@
 # DIY_hyrobot · 黄油机器人
 
-黄油机器人的唯一维护仓库，包含 ROS2、ESP32-S3 驱动、YOLO 训练和硬件资源入口。
+黄油机器人的总仓库，包含 ROS 2 上位机、ESP32-S3 驱动、YOLO 训练和硬件资源入口。各目录是普通 Git 文件，不是 submodule，克隆一次即可获得项目代码和文档。
 
-- [ROS2 功能包与详细教程](hy_ros/readme.md)：`hy_ros/`
-- [ESP32-S3 驱动器](hy_driver/readme.md)：`hy_driver/`
-- [YOLO 训练与模型导出](butter_yolov8n_train/readme.md)：`butter_yolov8n_train/`
-- [SolidWorks 硬件与压缩包](hardware/README.md)：`hardware/`
-- [资源下载与复现说明](hy_ros/docs/source/7_Resources.md)
-- [本地独立开发、分支同步与备份](hy_ros/docs/source/8_Maintenance.md)
+## 项目目录
+
+| 目录 | 内容与入口 |
+| --- | --- |
+| `hy_ros/` | [ROS 工作区](hy_ros/readme.md)：串口、EKF、视觉、语音、SLAM 和导航原型 |
+| `hy_driver/` | [ESP32-S3 固件](hy_driver/readme.md)：电机、编码器、IMU、UART 与音频 |
+| `butter_yolov8n_train/` | [训练与导出](butter_yolov8n_train/readme.md)：单类别黄油模型、uv 环境和历史结果 |
+| `hardware/` | [机械资源](hardware/README.md)：SolidWorks Release、校验和总装入口 |
+| `hy_ros/docs/` | [文档构建](hy_ros/docs/README.md)、[开发教程](hy_ros/docs/source/3_Development_instructions.md) |
+| `tools/`、`resources/` | 硬件下载、独立组件同步工具及资源清单 |
+
+项目图片、硬件规格和演示见[项目介绍](hy_ros/docs/source/1_product_introduction.md)。复刻从[开始前的准备](hy_ros/docs/source/project_status.md)进入：Nav2 抓取任务仍是实验原型，本地 RKLLM 当前为文本推理，手掌检测与自主跟随未实现。
 
 ## 首次使用
 
 ```bash
 git clone https://github.com/zhanghongchen1213/DIY_hyrobot.git
 cd DIY_hyrobot
-# 还原本项目少量测试脚本、测试图与 YOLO 模型（普通 Git 文件，无需下载压缩包）
+# 还原本项目测试脚本、测试图与 YOLO 模型，均来自普通 Git 文件。
 python3 hy_ros/tools/fetch_source.py --group project
-# 按需从公开上游下载，含 SHA-256 校验：
+# 按需下载 ASR 或 Qwen 模型，按清单进行 SHA-256 校验。
 python3 hy_ros/tools/fetch_source.py --group asr qwen
-# 只有 SolidWorks 采用本仓库 Release 压缩包；需安装 7-Zip。
+# SolidWorks 使用本仓库 Release 压缩包，需要 Python 3.9+ 和 7-Zip。
 python3 tools/download_resources.py --group Solidworks
 ```
 
-`source/` 继续被 Git 忽略。相机源码、RKLLM SDK 和 Roboflow 数据集分别从上游获取，具体版本与命令见[资源来源说明](hy_ros/docs/source/7_Resources.md)。不重复打包第三方模型与数据集。普通源码、文档和图片均直接保存在仓库中。
+`hy_ros/source/`、训练 `Dataset/` 和根目录 `Solidworks/` 被 Git 忽略。相机源码、RKLLM SDK 与数据集分别从上游获取，固定版本和命令见[资源来源说明](hy_ros/docs/source/7_Resources.md)。ASR/Qwen 下载并不包含完整训练数据集。
+
+## 运行环境与入口
+
+- ROS：Ubuntu 22.04 / ROS 2 Humble，板端视觉与本地模型依赖 RK3588S 驱动、RKNN/RKLLM、RGA 和多媒体库。按教程准备依赖后，在 `hy_ros/` 执行 `colcon build`；各包启动方式见模块 README。
+- 固件：ESP-IDF `>=5.1.5,<5.4.0`，当前锁定 5.1.5。在 `hy_driver/` 执行 `idf.py set-target esp32s3`、`idf.py build`，再按实际串口刷写。
+- 训练：Python 3.12 和 NVIDIA CUDA GPU。从 `butter_yolov8n_train/` 使用已提交的 uv 锁文件安装依赖，再在 IDE 执行 Notebook；数据集需另行获取。
+
+文档预览可在开发电脑运行；ROS、固件和模型运行需要上面对应的平台与设备。
 
 ## 文档网页
 
-Windows 在仓库根目录执行：
+Linux 或 macOS 在仓库根目录执行：
+
+```bash
+python3 -m venv hy_ros/docs/.venv
+. hy_ros/docs/.venv/bin/activate
+python -m pip install -r hy_ros/docs/requirements.txt
+python -m sphinx -b html -n -W --keep-going hy_ros/docs/source hy_ros/docs/build/html
+python -m http.server 8767 --bind 127.0.0.1 --directory hy_ros/docs/build/html
+```
+
+Windows 可执行：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\hy_ros\docs\preview.ps1 -Port 8767
 ```
 
-浏览器打开 `http://127.0.0.1:8767/`。Linux 可执行：
+浏览器打开 `http://127.0.0.1:8767/`。章节按主机、端侧、硬件测试、语音、可视化、训练、视觉部署、SLAM 与 Nav2 分页，旧开发教程地址保留为总入口。
 
-```bash
-python3 -m venv .venv
-. .venv/bin/activate
-pip install -r hy_ros/docs/requirements.txt
-python -m sphinx -b html hy_ros/docs/source hy_ros/docs/build/html
-python -m http.server 8767 --bind 127.0.0.1 --directory hy_ros/docs/build/html
-```
+总仓库 Read the Docs 配置位于根目录 `.readthedocs.yaml`。旧站 `hy-ros.readthedocs.io` 的仓库关联和最新构建需在后台核对；本地构建通过不等于线上发布成功。
 
-Read the Docs 构建配置位于仓库根目录 `.readthedocs.yaml`。旧站 `hy-ros.readthedocs.io` 的后台关联仓库需要改为本仓库；仓库代码无法代替该账号后台设置。在完成改绑前，以本仓库的文档和本地构建为准。
+## 维护与许可
 
-本仓库采用 subtree 的 squash 导入；三个原始本地仓库完整保留原分支与历史。日常在原目录 `git commit` 后执行 `git publish`，即可将该组件的当前分支合并并推送到总仓库。不要从组件目录直接向总仓库 `main` 推送根目录树。详见维护指南。
+日常直接在总仓库开发、提交和审查变更，详见[维护指南](hy_ros/docs/maintainer/repository.md)。只有拥有独立组件仓库时才使用 `tools/sync_component.py`。
 
-第三方依赖、模型和数据保留其原有许可证与来源；没有为整个仓库重新授予统一许可证。
+仓库根目录没有统一许可证。ROS 各包、第三方固件依赖、模型与数据保留各自许可和来源，不为整个仓库重新授予统一授权。

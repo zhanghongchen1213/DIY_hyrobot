@@ -3,7 +3,7 @@
 硬件由本仓库的 [hardware-2026-10-13 Release](https://github.com/zhanghongchen1213/DIY_hyrobot/releases/tag/hardware-2026-10-13) 提供 `Solidworks-2026-10-13.7z`。采用 7z / LZMA2、Ultra (`-mx=9`)、512 MiB 字典设置（7-Zip 根据数据量将归档实际字典设为 384 MiB，覆盖整个原目录的数据规模）、273 字节匹配和 solid 模式进行无损压缩；保留原始 125 个文件、中文名称和目录关系。解压前后逐文件 SHA-256 校验。
 
 ```bash
-# 在 DIY_hyrobot 根目录执行；需安装 7-Zip
+# 在 DIY_hyrobot 根目录执行；需 Python 3.9+ 和 7-Zip
 python3 tools/download_resources.py --group Solidworks
 python3 tools/download_resources.py --group Solidworks --verify-only
 ```
@@ -13,3 +13,7 @@ python3 tools/download_resources.py --group Solidworks --verify-only
 仓库的 `resources/resources-manifest.json` 提供归档及每个原始文件的尺寸、路径和 SHA-256。文件过大，使用同一仓库的 Releases 保存，避免超过 GitHub 的 100 MiB 单文件限制。
 
 最终归档为 287,911,690 字节，比原目录减少约 17.2%。已比较 64 MiB 与 512 MiB 字典，保留后者较小的结果。
+
+## 资料边界
+
+本目录提供机械模型获取入口，不含 PCB 原理图工程或 BOM；资源中的板模型是三维零件。电路资料入口为[立创开源黄油机器人](https://oshwhub.com/nhwjxzxz/huang-you-ji-qi-ren)。打开总装前保留零件目录关系，缺失的外部引用需在 SolidWorks 中补齐。

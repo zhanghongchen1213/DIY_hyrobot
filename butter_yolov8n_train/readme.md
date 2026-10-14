@@ -1,140 +1,59 @@
-# 全球首发！瑞克和莫蒂 专属定制黄油机器人！
+# 黄油目标检测模型训练与导出
 
-> 本项目是 [DIY_hyrobot](https://github.com/zhanghongchen1213/DIY_hyrobot) 的 `butter_yolov8n_train/` 子目录。首次使用请先阅读 [资源获取与复现说明](https://github.com/zhanghongchen1213/DIY_hyrobot/blob/main/hy_ros/docs/source/7_Resources.md)；本地独立开发与同步见 [维护指南](https://github.com/zhanghongchen1213/DIY_hyrobot/blob/main/hy_ros/docs/source/8_Maintenance.md)。
+本目录提供单类别 `butter` 的 YOLOv8n 训练 Notebook、uv 环境、基础权重与历史训练结果。最终 RK3588S 部署使用 `.rknn`，需要在 ONNX 导出后完成 RKNN-Toolkit2 转换；ROS 视觉代码位于[hy_ros](../hy_ros/readme.md)。
 
-## 🛒 购买链接
+## 目录与运行环境
 
-> 🐟 **闲鱼搜索**：`鸿尘客`
->
-> 如有疑问可通过闲鱼私信联系卖家，支持定制化需求沟通。
+| 路径 | 用途 |
+| --- | --- |
+| `butter_yolov8n_train.ipynb` | GPU 检查、模型训练和 RKNN 兼容 ONNX 导出入口 |
+| `butter_train_env/` | `pyproject.toml`、`uv.lock` 与内核环境说明 |
+| `dataset.yaml` | 指向 `Dataset/train/images`、`valid/images`、`test/images`，类别为 butter |
+| `yolov8n.pt` | Notebook 默认基础权重；另有 yolo11n.pt，但该 Notebook 未使用它 |
+| `butter_train_results/yolov8n_butter/` | 已提交历史配置、指标、图表和 `weights/` 产物 |
 
-# 📖 项目简介
+当前环境使用 Python 3.12、PyTorch 2.5.1、torchvision 0.20.1、torchaudio 2.5.1，Windows/Linux 配置 CUDA 12.4 wheel 源。Ultralytics 8.2.82 来自 airockchip 分支，锁定提交 `4674fe6e003dfbc5f2250d3b39dd31faaf7a9877`。Notebook 使用 `cuda:0`，需要 NVIDIA CUDA GPU；macOS 不能直接照此设备参数训练。
 
-**黄油机器人（Butter Robot）** 是一款基于 ROS2 Humble 的全功能自主移动机器人平台，采用 Rockchip RK3588S 作为主控芯片，搭配 ESP32S3 微控制器实现底层运动控制。项目涵盖感知、定位建图、运动控制、视觉处理和语音交互五大核心功能模块，是一个集成度较高的机器人学习与开发平台。
+## 数据准备
 
-# 🔗 开源地址
+从 [Roboflow butter_robot v3](https://universe.roboflow.com/butter-robot/butter_robot/dataset/3) 获取 YOLOv8 导出数据，解压为：
 
-| 平台                     | 链接                                                                                                                   |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| 个人博客                 | [https://zhcmqtt.top](https://zhcmqtt.top)                                                                             |
-| CSDN博客                 | [https://blog.csdn.net](https://blog.csdn.net/weixin_46477159?spm=1000.2115.3001.5343)                                 |
-| 立创硬件开源             | [https://x.jlc.com](https://oshwhub.com/nhwjxzxz/huang-you-ji-qi-ren)                                                  |
-| GitHub——ROS算法开源      | [https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/hy_ros](https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/hy_ros)                             |
-| GitHub——驱动器算法开源   | [https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/hy_driver](https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/hy_driver)                       |
-| GitHub——yolo训练算法开源 | [https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/butter_yolov8n_train](https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/butter_yolov8n_train) |
-| 开发教程开源             | [https://hy-ros.readthedocs.io](https://hy-ros.readthedocs.io/zh-cn/latest/1_product_introduction.html)                |
+```text
+butter_yolov8n_train/
+└── Dataset/
+    ├── train/images/ 与 train/labels/
+    ├── valid/images/ 与 valid/labels/
+    └── test/images/ 与 test/labels/
+```
 
-# 📷 产品外观
+`Dataset/` 被 Git 忽略，克隆仓库后需自行准备。原文记录 2,689 / 267 / 116 张训练、验证、测试图及 CC BY 4.0；图像数量和使用许可请以实际下载的导出包为准。
 
-|                                                                                                  |                                                                                                  |
-| :----------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------: |
-| [![yl9J6U.md.png](../hy_ros/docs/source/_static/recovered/yl9J6U.png)](../hy_ros/docs/source/_static/recovered/yl9J6U.png) | [![yl9EAF.md.png](../hy_ros/docs/source/_static/recovered/yl9EAF.png)](../hy_ros/docs/source/_static/recovered/yl9EAF.png) |
-| [![yl9BC0.md.png](../hy_ros/docs/source/_static/recovered/yl9BC0.png)](../hy_ros/docs/source/_static/recovered/yl9BC0.png) | [![yl9lw9.md.png](../hy_ros/docs/source/_static/recovered/yl9lw9.png)](../hy_ros/docs/source/_static/recovered/yl9lw9.png) |
-| [![yl9KLc.md.png](../hy_ros/docs/source/_static/recovered/yl9KLc.png)](../hy_ros/docs/source/_static/recovered/yl9KLc.png) | [![yl9YdX.md.png](../hy_ros/docs/source/_static/recovered/yl9YdX.png)](../hy_ros/docs/source/_static/recovered/yl9YdX.png) |
-| [![yl9GcO.md.png](../hy_ros/docs/source/_static/recovered/yl9GcO.png)](../hy_ros/docs/source/_static/recovered/yl9GcO.png) | [![yl9m6d.md.png](../hy_ros/docs/source/_static/recovered/yl9m6d.png)](../hy_ros/docs/source/_static/recovered/yl9m6d.png) |
+## 安装与训练
 
-# 🏗️ 系统架构
+从仓库根目录开始，保持 Notebook 工作目录在 `butter_yolov8n_train`：
 
-系统采用分层模块化架构，主要分为以下五层：
+```bash
+cd butter_yolov8n_train
+uv sync --project butter_train_env --frozen --python 3.12
+uv run --project butter_train_env --frozen python -m ipykernel install --user --name butter_train --display-name "Python (butter_train)"
+```
 
-- **感知层**：集成 LDLiDAR 2D 激光雷达（360° 环境扫描）、1080P 摄像头、6 轴 IMU 惯性测量单元和轮式编码器里程计，提供多源环境感知能力。
-- **定位与建图层**：基于 slam_toolbox 实现在线异步 SLAM 建图，通过 robot_localization 扩展卡尔曼滤波（EKF）融合轮式里程计与 IMU 数据，并使用 laser_filters 过滤机器人自身遮挡。
-- **控制层**：通过 UART 串口（460800 波特率）与 ESP32S3 通信，实现差速驱动底盘的 PID 速度控制和舵机控制，支持键盘、手柄、语音等多种输入方式。
-- **视觉处理层**：利用 RK3588S 的 NPU（6TOPS 算力）硬件加速 YOLOv8 目标检测，三个视觉组件（采集、推理、推流）运行在同一 ComposableNodeContainer 中，通过零拷贝通信降低延迟。
-- **交互层**：集成 sherpa-onnx ASR 语音识别、RKLLM 本地大语言模型推理和百度大模型音色复刻 TTS 语音合成，实现全流式语音交互；同时通过 Foxglove Bridge 提供 Web 端远程监控与数字孪生可视化。
+在 VS Code、PyCharm 等 IDE 打开 `butter_yolov8n_train.ipynb`，选择 `Python (butter_train)` 内核，依次执行单元。环境中的 `main.py` 是 Hello 模板，不是训练程序。
 
-# 🎬 视频演示
+Notebook 当前参数为 120 epochs、batch 64、640×640、device 0，结果写入 `butter_train_results/yolov8n_butter/`。历史 `args.yaml` 的优化器为 `auto`，不能直接写成固定 SGD。显存不足时可减小 batch；`exist_ok=True` 会复用同名输出目录，重训前应保留已有结果。
 
-[![点击观看视频](../hy_ros/docs/source/_static/recovered/ylsonn.jpg)](https://www.bilibili.com/video/BV1hQcFzrEXS/?vd_source=d74d3e2c07a341457b5e708db2594eab)
+```bash
+uv run --project butter_train_env --frozen tensorboard --logdir butter_train_results/yolov8n_butter --port 6006
+```
 
-> 📺 **视频作者**：B站 @鸿尘客
-> 🔗 **视频链接**：[黄油机器人](https://www.bilibili.com/video/BV1hQcFzrEXS/?vd_source=d74d3e2c07a341457b5e708db2594eab)
+## 导出与部署
 
-# ⚙️ 硬件规格
+Notebook 的 `model.export(format="rknn")` 在固定分支中生成权重目录下的 `best.onnx`（opset 12），不直接生成 `.rknn`。随后在 RKNN-Toolkit2 环境执行模型转换。详细的 Docker、转换与端侧测试步骤见[训练与转换教程](../hy_ros/docs/source/development/model_training.md)。
 
-|     项目     |                      参数                      |
-| :----------: | :--------------------------------------------: |
-|  主芯片 SOC  |                Rockchip RK3588S                |
-|     CPU      | 4 核 Cortex-A76(2.4GHZ)+4 核 Cortex-A5(1.8GHZ) |
-|     NPU      |                     6TOPS                      |
-|     VPU      |          H.264/H.265/JPEG 硬件编解码           |
-|     RAM      |                   LPDDR5 8GB                   |
-|      TF      |                      32GB                      |
-|  Wi-Fi+蓝牙  |                 Wi-Fi 5+BT 5.0                 |
-|  驱动器 MCU  |                    ESP32S3                     |
-|   电池容量   |                  3000mAh 12V                   |
-| 摄像头分辨率 |                1920x1080 30FPS                 |
-|   操作系统   |                  Ubuntu22.04                   |
-|   ROS 版本   |                  ROS2 Humble                   |
+历史 `weights/best.pt` 与 `last.pt` 各 6,256,099 字节，`best.onnx` 为 12,065,989 字节；本目录没有已转换的 `.rknn`。可直接部署的项目模型由 `hy_ros/tools/fetch_source.py --group project` 还原，见[资源说明](../hy_ros/docs/source/7_Resources.md)。它不会自动被本次训练产物替换。
 
-# 📐 硬件框图
+## 历史结果与检查范围
 
-[![ylD0Gx.md.png](../hy_ros/docs/source/_static/recovered/ylD0Gx.png)](../hy_ros/docs/source/_static/recovered/ylD0Gx.png)
+已提交的 120 轮 `results.csv` 最后一轮记录：Precision 0.89248、Recall 0.87582、mAP50 0.92558、mAP50-95 0.75695、train/dfl_loss 0.83165。重新训练的结果取决于数据、环境和参数。
 
-# 🚀 产品功能
-
-## 🧠 YOLOv8n 目标检测训练
-
-本仓库为黄油机器人提供完整的 **YOLOv8n 目标检测模型训练流程**，从数据准备到模型导出一站式完成，训练产出可直接部署至 RK3588S NPU 进行实时推理。
-
-### 📦 数据集
-
-|   项目   |                                              参数                                               |
-| :------: | :---------------------------------------------------------------------------------------------: |
-| 数据来源 | [Roboflow - butter_robot v3](https://universe.roboflow.com/butter-robot/butter_robot/dataset/3) |
-| 检测类别 |                                       `butter`（单类别）                                        |
-|  训练集  |                                        2,689 张标注图像                                         |
-|  验证集  |                                         267 张标注图像                                          |
-|  测试集  |                                         116 张标注图像                                          |
-| 标注格式 |                                       YOLO 归一化坐标格式                                       |
-| 开源协议 |                                            CC BY 4.0                                            |
-
-### ⚡ 训练配置
-
-|    项目    |          参数          |
-| :--------: | :--------------------: |
-|  基础模型  | YOLOv8n（Nano 轻量级） |
-|  训练轮数  |       120 Epochs       |
-|  批次大小  |           64           |
-| 输入分辨率 |       640 × 640        |
-|   优化器   | SGD（momentum=0.937）  |
-| 初始学习率 |          0.01          |
-|  训练设备  |     CUDA GPU 加速      |
-|  混合精度  |  AMP 自动混合精度训练  |
-
-### 🎯 数据增强策略
-
-- **Mosaic 拼接增强**：4 张图像拼接，提升小目标检测能力
-- **HSV 色彩空间增强**：色调 ±0.015、饱和度 ±0.7、明度 ±0.4
-- **水平翻转**：50% 概率随机水平翻转
-- **随机擦除**：40% 概率遮挡区域，增强鲁棒性
-- **RandAugment**：自动数据增强策略
-- **尺度缩放**：±0.5 倍随机缩放
-
-### 📤 模型导出
-
-|   导出格式    |       用途       |        文件大小         |
-| :-----------: | :--------------: | :---------------------: |
-| PyTorch (.pt) |    训练与验证    |         ~6.0 MB         |
-| ONNX (.onnx)  |    跨平台推理    |        ~11.5 MB         |
-|     RKNN      | RK3588S NPU 部署 | 通过 RKNN-Toolkit2 转换 |
-
-### 🔬 训练产出
-
-训练完成后自动生成以下评估文件：
-
-- `results.csv` — 逐轮训练指标记录
-- `results.png` — 训练损失与指标曲线
-- `confusion_matrix.png` — 混淆矩阵
-- `F1_curve.png` — F1 分数曲线
-- `PR_curve.png` — 精确率-召回率曲线
-- `P_curve.png` / `R_curve.png` — 精确率 / 召回率曲线
-- `labels.jpg` — 数据集标签分布可视化
-
-### 🤖 部署目标
-
-训练完成的模型最终部署于黄油机器人的 **RK3588S NPU（6TOPS）** 上，实现：
-
-- 实时黄油目标检测与定位
-- 与 ROS2 视觉处理节点无缝集成
-- 采集、推理、推流三组件零拷贝通信，低延迟运行
+视觉节点当前只发布标注图像，结构化检测、跟随和导航接口的限制见[视觉部署教程](../hy_ros/docs/source/development/vision.md)。
