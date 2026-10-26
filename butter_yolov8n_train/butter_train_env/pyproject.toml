@@ -3,6 +3,7 @@ name = "butter-train-env"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.12"
 dependencies = [
     "onnxscript>=0.5.0",

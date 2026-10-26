@@ -48,12 +48,12 @@ uv run --project butter_train_env --frozen tensorboard --logdir butter_train_res
 
 ## 导出与部署
 
-Notebook 的 `model.export(format="rknn")` 在固定分支中生成权重目录下的 `best.onnx`（opset 12），不直接生成 `.rknn`。随后在 RKNN-Toolkit2 环境执行模型转换。详细的 Docker、转换与端侧测试步骤见[训练与转换教程](../hy_ros/docs/source/development/model_training.md)。
+Notebook 的 `model.export(format="rknn")` 在固定分支中生成权重目录下的 `best.onnx`（opset 12），不直接生成 `.rknn`。随后在 RKNN-Toolkit2 环境执行模型转换。
 
-历史 `weights/best.pt` 与 `last.pt` 各 6,256,099 字节，`best.onnx` 为 12,065,989 字节；本目录没有已转换的 `.rknn`。可直接部署的项目模型由 `hy_ros/tools/fetch_source.py --group project` 还原，见[资源说明](../hy_ros/docs/source/7_Resources.md)。它不会自动被本次训练产物替换。
+历史 `weights/best.pt` 与 `last.pt` 各 6,256,099 字节，`best.onnx` 为 12,065,989 字节；本目录没有已转换的 `.rknn`。可直接部署的项目模型由 `hy_ros/tools/fetch_source.py --group project` 还原，清单见 [source-manifest.json](../hy_ros/resources/source-manifest.json)。它不会自动被本次训练产物替换。
 
 ## 历史结果与检查范围
 
 已提交的 120 轮 `results.csv` 最后一轮记录：Precision 0.89248、Recall 0.87582、mAP50 0.92558、mAP50-95 0.75695、train/dfl_loss 0.83165。重新训练的结果取决于数据、环境和参数。
 
-视觉节点当前只发布标注图像，结构化检测、跟随和导航接口的限制见[视觉部署教程](../hy_ros/docs/source/development/vision.md)。
+视觉节点当前只发布标注图像。结构化检测、跟随和导航接口的限制见[ROS 工作区说明](../hy_ros/readme.md)。

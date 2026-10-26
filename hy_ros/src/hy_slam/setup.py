@@ -21,7 +21,7 @@ setup(
     maintainer='k',
     maintainer_email='k@localhost',
     description='SLAM package for RK3588S robot',
-    license='Apache-2.0',
+    license='MIT',
     extras_require={
         'test': [
             'pytest',

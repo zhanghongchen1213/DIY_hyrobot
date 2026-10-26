@@ -29,7 +29,7 @@ mkdir -p "$map_directory"
 cp src/hy_slam/map/my_map.yaml src/hy_slam/map/my_map.pgm "$map_directory/"
 ```
 
-地图生成与序列化定位方法见[SLAM 教程](../../docs/source/development/slam.md)。清理或重建安装空间后需重新检查地图。
+清理或重建安装空间后需重新检查地图。
 
 ## 启动入口
 
@@ -73,4 +73,4 @@ ros2 launch hy_nav2 butter_mission.launch.py
 
 节点没有实现距离小于 0.3 m 才抓取、抓取等待或执行回执。不能仅根据启动成功判定“导航抓取返回”可用。
 
-`butter_mission.launch.py` 当前可配置 `center_x=0.0`、`center_y=0.0` 和 `search_angular_speed=0.5`。更多参数、话题与 TF 检查见[导航教程](../../docs/source/development/navigation.md)。
+`butter_mission.launch.py` 当前可配置 `center_x=0.0`、`center_y=0.0` 和 `search_angular_speed=0.5`。话题与尚未接通的接口见上文表格。

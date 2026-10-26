@@ -21,7 +21,7 @@ setup(
     maintainer='k',
     maintainer_email='k@localhost',
     description='Nav2 autonomous navigation and mission scheduling for Butter Robot',
-    license='Apache-2.0',
+    license='MIT',
     extras_require={
         'test': [
             'pytest',

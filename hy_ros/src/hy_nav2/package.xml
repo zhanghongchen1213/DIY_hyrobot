@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>Nav2 autonomous navigation and mission scheduling for Butter Robot</description>
   <maintainer email="k@localhost">k</maintainer>
-  <license>Apache-2.0</license>
+  <license>MIT</license>
 
   <depend>rclpy</depend>
   <depend>std_msgs</depend>

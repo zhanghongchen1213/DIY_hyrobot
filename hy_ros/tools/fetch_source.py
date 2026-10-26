@@ -47,6 +47,6 @@ def main():
             bad=part.with_name(part.name+'.bad');part.replace(bad)
             raise RuntimeError('SHA-256 mismatch, retained at '+str(bad))
         part.replace(target);print('Restored '+entry['path'],flush=True)
-    print('Selected resources ready. Camera/SDK/data download instructions: docs/source/7_Resources.md')
+    print('Selected resources ready. Versions and checksums: resources/source-manifest.json')
 
 if __name__=='__main__':main()

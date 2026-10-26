@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>Streaming ASR node using sherpa-onnx with RKNN provider</description>
   <maintainer email="k@todo.todo">k</maintainer>
-  <license>Apache-2.0</license>
+  <license>MIT</license>
 
   <depend>rclpy</depend>
   <depend>std_msgs</depend>

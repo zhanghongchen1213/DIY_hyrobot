@@ -1,6 +1,6 @@
 # 黄油机器人 ESP32-S3 驱动固件
 
-本目录负责底盘电机、编码器、IMU、串口、音频与条件编译外设，采用 ESP-IDF。ROS 2、视觉推理、语音模型和导航运行在 RK3588S 上，见[ROS 工作区](../hy_ros/readme.md)。项目外观、演示和硬件入口见[项目介绍](../hy_ros/docs/source/1_product_introduction.md)。
+本目录负责底盘电机、编码器、IMU、串口、音频与条件编译外设，采用 ESP-IDF。ROS 2、视觉推理、语音模型和导航运行在 RK3588S 上，外观、演示和硬件规格见[ROS 工作区说明](../hy_ros/readme.md)。
 
 ## 环境与构建
 
@@ -53,8 +53,8 @@ idf.py -p /dev/ttyUSB0 flash monitor
 
 ## 验证与已知问题
 
-上位机的 `/cmd_vel`、`/joint_commands` 尚未桥接到当前 UART，详见[导航接口说明](../hy_ros/docs/source/development/navigation.md)。
+上位机的 `/cmd_vel`、`/joint_commands` 尚未桥接到当前 UART。缺口见[导航模块说明](../hy_ros/src/hy_nav2/README.md)。
 
 `app_uart_control.c` 的 `PID_DEBUG` 分支把左轮目标与参数同时写到左右轮；默认关闭该分支。开启在线调参前应先修正并在设备上验证，不能把此分支当成已验收功能。
 
-资源来源见[复现说明](../hy_ros/docs/source/7_Resources.md)，日常代码维护见[维护指南](../hy_ros/docs/maintainer/repository.md)。本仓库没有统一许可证，第三方组件保留各自许可。
+资源清单见 [source-manifest.json](../hy_ros/resources/source-manifest.json)，日常代码维护见[维护指南](../hy_ros/docs/maintainer/repository.md)。本仓库以 MIT 协议授权，版权人是鸿尘客，全文见仓库根目录 `LICENSE`。第三方组件保留各自许可。

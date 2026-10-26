@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>SLAM package for RK3588S robot</description>
   <maintainer email="k@todo.todo">k</maintainer>
-  <license>Apache-2.0</license>
+  <license>MIT</license>
 
   <depend>rclpy</depend>
   <exec_depend>slam_toolbox</exec_depend>

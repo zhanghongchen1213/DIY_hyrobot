@@ -8,7 +8,6 @@ _bmad
 _bmad-output
 .claude
 .bun
-/docs/.venv/
 
 **/__pycache__/
 *.pyc

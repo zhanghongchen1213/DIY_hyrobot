@@ -1,6 +1,6 @@
 # 黄油机器人 ROS 2 工作区
 
-> 本项目是 [DIY_hyrobot](https://github.com/zhanghongchen1213/DIY_hyrobot) 的 `hy_ros/` 子目录。首次使用请先阅读 [资源获取与复现说明](docs/source/7_Resources.md)。
+> 本项目是 [DIY_hyrobot](https://github.com/zhanghongchen1213/DIY_hyrobot) 的 `hy_ros/` 子目录。模型与测试文件用 `tools/fetch_source.py` 按 [source-manifest.json](resources/source-manifest.json) 还原。
 
 ## 🛒 购买链接
 
@@ -22,16 +22,15 @@
 | GitHub——ROS算法开源      | [https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/hy_ros](https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/hy_ros)                             |
 | GitHub——驱动器算法开源   | [https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/hy_driver](https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/hy_driver)                       |
 | GitHub——yolo训练算法开源 | [https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/butter_yolov8n_train](https://github.com/zhanghongchen1213/DIY_hyrobot/tree/main/butter_yolov8n_train) |
-| 开发教程开源             | [https://hy-ros.readthedocs.io](https://hy-ros.readthedocs.io/zh-cn/latest/1_product_introduction.html)                |
 
 ## 📷 产品外观
 
 |                                                                                                  |                                                                                                  |
 | :----------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------: |
-| [![黄油机器人实物照片 1](docs/source/_static/recovered/yl9J6U.png)](docs/source/_static/recovered/yl9J6U.png) | [![黄油机器人实物照片 2](docs/source/_static/recovered/yl9EAF.png)](docs/source/_static/recovered/yl9EAF.png) |
-| [![黄油机器人实物照片 3](docs/source/_static/recovered/yl9BC0.png)](docs/source/_static/recovered/yl9BC0.png) | [![黄油机器人实物照片 4](docs/source/_static/recovered/yl9lw9.png)](docs/source/_static/recovered/yl9lw9.png) |
-| [![黄油机器人实物照片 5](docs/source/_static/recovered/yl9KLc.png)](docs/source/_static/recovered/yl9KLc.png) | [![黄油机器人实物照片 6](docs/source/_static/recovered/yl9YdX.png)](docs/source/_static/recovered/yl9YdX.png) |
-| [![黄油机器人实物照片 7](docs/source/_static/recovered/yl9GcO.png)](docs/source/_static/recovered/yl9GcO.png) | [![黄油机器人实物照片 8](docs/source/_static/recovered/yl9m6d.png)](docs/source/_static/recovered/yl9m6d.png) |
+| [![黄油机器人实物照片 1](images/yl9J6U.png)](images/yl9J6U.png) | [![黄油机器人实物照片 2](images/yl9EAF.png)](images/yl9EAF.png) |
+| [![黄油机器人实物照片 3](images/yl9BC0.png)](images/yl9BC0.png) | [![黄油机器人实物照片 4](images/yl9lw9.png)](images/yl9lw9.png) |
+| [![黄油机器人实物照片 5](images/yl9KLc.png)](images/yl9KLc.png) | [![黄油机器人实物照片 6](images/yl9YdX.png)](images/yl9YdX.png) |
+| [![黄油机器人实物照片 7](images/yl9GcO.png)](images/yl9GcO.png) | [![黄油机器人实物照片 8](images/yl9m6d.png)](images/yl9m6d.png) |
 
 ## 🏗️ 系统架构
 
@@ -45,7 +44,7 @@
 
 ## 🎬 视频演示
 
-[![视频封面](docs/source/_static/recovered/ylsonn.jpg)](https://www.bilibili.com/video/BV1hQcFzrEXS/?spm_id_from=333.1007.top_right_bar_window_history.content.click)
+[![视频封面](images/ylsonn.jpg)](https://www.bilibili.com/video/BV1hQcFzrEXS/?spm_id_from=333.1007.top_right_bar_window_history.content.click)
 
 > 📺 **视频作者**：B站 @鸿尘客
 > 🔗 **视频链接**：[黄油机器人](https://www.bilibili.com/video/BV1hQcFzrEXS/?spm_id_from=333.1007.top_right_bar_window_history.content.click)
@@ -71,7 +70,7 @@
 
 ## 📐 硬件框图
 
-[![硬件框图](docs/source/_static/recovered/ylD0Gx.png)](docs/source/_static/recovered/ylD0Gx.png)
+[![硬件框图](images/ylD0Gx.png)](images/ylD0Gx.png)
 
 ## 🚀 产品功能
 
@@ -124,7 +123,7 @@
 
 ## 安装与启动
 
-目标环境为 Ubuntu 22.04、ROS 2 Humble，视觉与本地模型运行在 RK3588S。先按[开发教程](docs/source/3_Development_instructions.md)准备模型、多媒体库、音频依赖和串口；`rosdep` 不能自动补齐全部 RKNN/RKLLM 外部库。目录下的 `package.json` 只有 Bun 依赖，不是 ROS 构建入口。
+目标环境为 Ubuntu 22.04、ROS 2 Humble，视觉与本地模型运行在 RK3588S。模型、多媒体库、音频依赖和串口按板端环境准备；`rosdep` 不能自动补齐全部 RKNN/RKLLM 外部库。目录下的 `package.json` 只有 Bun 依赖，不是 ROS 构建入口。
 
 ```bash
 # 从仓库根目录开始，在已准备好依赖的板端工作区执行。
@@ -154,6 +153,6 @@ source install/setup.bash
 
 ## 接口限制与维护
 
-视觉节点当前只发布标注图像；RKLLM ROS 节点尚未集成视觉编码器；导航任务的检测、速度、舵机与位姿接口尚未全部接通。操作前提和接口配置见[导航教程](docs/source/development/navigation.md)；语音模型配置见[语音教程](docs/source/development/voice.md)。
+视觉节点当前只发布标注图像；RKLLM ROS 节点尚未集成视觉编码器；导航任务的检测、速度、舵机与位姿接口尚未全部接通。接口缺口见[导航模块说明](src/hy_nav2/README.md)。语音模型路径和百度音色环境变量写在 `audio_asr`、`audio_rkllm`、`audio_tts` 的 launch 文件里。
 
-资源恢复见[资源说明](docs/source/7_Resources.md)，文档构建见[文档 README](docs/README.md)，代码同步见[维护说明](docs/maintainer/repository.md)。许可按各功能包 `LICENSE` 和清单分别核对；根仓库未统一授权。
+资源清单见 [source-manifest.json](resources/source-manifest.json)，代码同步见[维护说明](docs/maintainer/repository.md)。本仓库以 MIT 协议授权，版权人是鸿尘客，全文见仓库根目录 `LICENSE`。乐动雷达驱动保留上游许可。

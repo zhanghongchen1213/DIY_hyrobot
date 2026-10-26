@@ -38,7 +38,7 @@
 6. EKF 默认发布 `/odometry/filtered`，Nav2 配置读取 `/odom`；需要统一话题或显式重映射。
 7. 任务节点发送导航目标后立即切换状态，没有等待导航成功、检测接近距离或等待抓取完成。
 
-因此“搜索黄油 → 导航抓取 → 返回起点”应作为待集成的任务原型阅读。地图准备和接口检查方法见 [SLAM](../source/development/slam.md) 与 [Nav2](../source/development/navigation.md)。
+因此“搜索黄油 → 导航抓取 → 返回起点”应作为待集成的任务原型阅读。地图复制和接口缺口见 [hy_nav2 说明](../../src/hy_nav2/README.md)。
 
 ## 固件默认配置
 
@@ -58,18 +58,18 @@
 
 - 训练 Notebook 使用 `butter` 单类别、120 轮、批次 64、640×640 和 `cuda:0`。环境锁定 PyTorch 2.5.1 / CUDA 12.4 wheel 与 airockchip Ultralytics 8.2.82 固定提交；原电脑驱动版本不能代替环境要求。
 - `format="rknn"` 在固定的 Ultralytics 分支中导出 RKNN 兼容 ONNX，之后仍需 RKNN-Toolkit2 转换为 `.rknn`。
-- `Dataset/`、`hy_ros/source/` 与根目录 `Solidworks/` 被 Git 忽略，分别按资源说明准备。已有训练指标和演示截图是历史产出，不是本次重训或运行结果。
-- [资源说明](../source/7_Resources.md)保留固定版本和校验记录；重新下载时以清单、上游许可与实际校验结果为准。
+- `Dataset/`、`hy_ros/source/` 与根目录 `Solidworks/` 被 Git 忽略，分别按资源清单准备。已有训练指标和演示截图是历史产出，不是本次重训或运行结果。
+- 固定版本和校验记录在 [source-manifest.json](../../resources/source-manifest.json)。重新下载时以清单、上游许可与实际校验结果为准。
 - [维护说明](repository.md)区分当前总仓库流程与旧电脑的独立组件工作区。`git publish` 别名、私有备份和旧远端归档状态不会随克隆自动获得。
 
 ## 其他源码核对发现
 
-- `all_launch/package.xml` 未完整声明启用中的视觉、Foxglove 与组件容器依赖；相机包清单也未完整覆盖 CMake 使用的图像库。仅执行 rosdep 不能保证准备好所有依赖，按视觉教程和各包构建配置逐项核对。
+- `all_launch/package.xml` 未完整声明启用中的视觉、Foxglove 与组件容器依赖；相机包清单也未完整覆盖 CMake 使用的图像库。仅执行 rosdep 不能保证准备好所有依赖，按各包构建配置逐项核对。
 - 相机源码读取参数 `image_topic`；启动文件中的 `pub_image_topic` 与 `sub_control_topic` 未被该源码读取。修改这些启动字段不能据此判定话题已更名或摄像头已受控制，应以实际 ROS 参数为准。
 - 固件 `main/app_uart_control/app_uart_control.c` 的 `PID_DEBUG` 分支把左轮目标和 PID 参数写给左右两轮；当前默认关闭，开启调参前需修正并验证。
 
 ## 本次文档检查范围
 
-核对范围包括源码入口、启动与构建配置、十份原有 README、章节导航和本地图片。项目 README 已修正职责、命令与版本；两份 BMAD 工具资料保留原文，雷达上游 README 仅修正 ROS 2 构建说明。
+核对范围包括源码入口、启动与构建配置和各模块 README。项目 README 已修正职责、命令与版本；两份 BMAD 工具资料保留原文，雷达上游 README 仅修正 ROS 2 构建说明。
 
-文档构建和链接检查可在本机完成。RK3588 推理、ROS 话题与 TF、ESP32 编译烧录、CUDA 重训及 SolidWorks 装配需要对应平台和设备，不能从静态分析得出运行通过的结论。
+说明之间的链接可在本机核对。RK3588 推理、ROS 话题与 TF、ESP32 编译烧录、CUDA 重训及 SolidWorks 装配需要对应平台和设备，不能从静态分析得出运行通过的结论。

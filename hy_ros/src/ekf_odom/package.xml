@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>EKF Odometry Fusion using robot_localization</description>
   <maintainer email="k@todo.todo">k</maintainer>
-  <license>Apache-2.0</license>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

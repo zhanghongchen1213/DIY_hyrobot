@@ -49,14 +49,11 @@ git merge FETCH_HEAD
 
 squash 导入可能需要原组件历史对象；新克隆不保证具有旧机器的全部对象。缺失时从对应独立仓库获取，先核对来源和 refs。不要为补齐本地历史把旧历史分支直接发布到总仓库远端。
 
-## 资源与文档更新
+## 资源更新
 
-- 第三方模型与数据集保留上游来源，更新固定版本和 SHA-256 时同步修改 `hy_ros/resources/source-manifest.json` 及教程。
+- 第三方模型与数据集保留上游来源，更新固定版本和 SHA-256 时同步修改 `hy_ros/resources/source-manifest.json`。
 - 项目自有测试脚本、测试图和 YOLO 模型位于 `hy_ros/resources/project/`，`fetch_source.py` 将其还原到被忽略的 `hy_ros/source/`。
 - SolidWorks 更新时先生成版本化归档与逐文件校验，完整解压验证后再更新 `resources/resources-manifest.json`。上传新 Release 和确认下载是独立步骤，保留已有版本资源。
-- 文档入口为 `source/index.rst`，教程导航为 `3_Development_instructions.md`；本地构建与预览方法见仓库 `hy_ros/docs/README.md`。
-
-根目录 `.readthedocs.yaml` 使用总仓库路径。Read the Docs 后台关联仓库、触发构建和线上结果需要单独检查，本地 HTML 构建不能证明线上站点已更新。
 
 ## 历史迁移说明
 

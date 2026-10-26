@@ -18,7 +18,7 @@ setup(
     maintainer='k',
     maintainer_email='k@todo.todo',
     description='Streaming ASR over sherpa-onnx with rknn provider',
-    license='Apache-2.0',
+    license='MIT',
     extras_require={
         'test': [
             'pytest',
